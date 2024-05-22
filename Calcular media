@@ -1,0 +1,52 @@
+def calcular_media(notas):
+    return sum(notas) / len(notas)
+
+def verificar_aprovacao(media):
+    if media >= 7.0:
+        return "Aprovado"
+    else:
+        return "Reprovado"
+
+def main():
+    # Solicitar ao usuário o número de alunos
+    num_alunos = int(input("Digite o número de alunos: "))
+    
+    # Inicializar a variável para armazenar a média geral da turma
+    media_geral = 0.0
+
+    # Iterar sobre cada aluno
+    for i in range(1, num_alunos + 1):
+        print(f"\nAluno {i}:")
+        
+        # Solicitar nome do aluno
+        nome = input("Nome do aluno: ")
+        
+        # Solicitar as notas do aluno
+        notas = []
+        for j in range(3):
+            nota = float(input(f"Digite a nota {j+1} do aluno {nome}: "))
+            notas.append(nota)
+        
+        # Calcular a média das notas
+        media_aluno = calcular_media(notas)
+        
+        # Verificar se o aluno foi aprovado ou reprovado
+        status = verificar_aprovacao(media_aluno)
+        
+        # Exibir informações do aluno
+        print(f"\nNome: {nome}")
+        print(f"Notas: {notas}")
+        print(f"Média: {media_aluno:.2f}")
+        print(f"Situação: {status}")
+        
+        # Adicionar a média do aluno à média geral da turma
+        media_geral += media_aluno
+    
+    # Calcular a média geral da turma
+    media_geral /= num_alunos
+    
+    # Exibir média geral da turma
+    print("\nMédia geral da turma:", media_geral)
+
+if __name__ == "__main__":
+    main()
