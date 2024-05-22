@@ -1,0 +1,27 @@
+# Inicialize variáveis para contar a quantidade de números, a soma e a média
+quantidade_numeros = 0
+soma = 0
+
+# Ler números até que o usuário digite 0
+while True:
+    # Solicitar ao usuário que insira um número
+    numero = int(input("Digite um número (ou 0 para sair): "))
+    
+    # Verificar se o número é zero
+    if numero == 0:
+        break  # Sai do loop se o número for zero
+    
+    # Incrementar a quantidade de números e adicionar o número à soma
+    quantidade_numeros += 1
+    soma += numero
+
+# Calcular a média aritmética
+if quantidade_numeros > 0:
+    media = soma / quantidade_numeros
+else:
+    media = 0
+
+# Exibir os resultados
+print("Quantidade de números digitados:", quantidade_numeros)
+print("Soma dos números:", soma)
+print("Média aritmética dos números:", media)
